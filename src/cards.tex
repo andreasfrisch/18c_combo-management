@@ -1,0 +1,39 @@
+\documentclass[a4paper]{article}
+\input{include/libs.tex}
+\input{include/colors.tex}
+\input{include/card_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\noindent
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{tan}
+	\costBarSecond{tan}{teal}
+	\costBarThird{tan}{teal}
+	\costBarFourth{teal}{teal}
+	\leftPrimaryAbility{tan}{If you can read me, you can use this ability}
+	\leftSecondaryAbility{teal}{This ability is on the other side}
+	\rightPrimaryAbility{tan}{If you can read me, you can use this ability}
+	\rightSecondaryAbility{teal}{This ability is on the other side}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{tan}{tan}
+	\costBarSecond{teal}{tan}
+	\costBarThird{teal}{tan}
+	\costBarFourth{teal}{teal}
+	\leftPrimaryAbility{teal}{If you can read me, you can use this ability}
+	\leftSecondaryAbility{tan}{This ability is on the other side}
+	\rightPrimaryAbility{teal}{If you can read me, you can use this ability}
+	\rightSecondaryAbility{tan}{This ability is on the other side}
+\end{tikzpicture}%
+
+
+\end{center}
+\end{document}

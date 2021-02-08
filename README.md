@@ -36,6 +36,8 @@ Lastly, determine a starting player by whichever means the group prefer.
 
 * Resources: Cards in front of a player indicates the players resources. The amount of resources are indicated by the dots closest to the player, and the type of resource is indicated by the colour of the dots. There are two types of resource in the game. A player can at most have 3 of each resource -- any excess are lost.
 
+* Swapping: When asked to swap two cards in the deck zone, the cards maintain their individual orientation. When swapping a card between a player zone and the deck zone, then the colours much be identical, but the cards will trade orientation as well as spatial position -- This allows swapping without breaking the game state completely.
+
 #### Player Turn
 On a player's turn they may perform all of the following actions once in any order.
 

@@ -8,32 +8,475 @@
 \pagestyle{empty}
 \hyphenpenalty=10000
 
+% Abilities
+\newcommand{\discardText}{Discard up to two cards from the market}
+\newcommand{\activateText}{Gain energy upon discarding.\n Activate one card in the market}
+\newcommand{\swapText}{Swap 2 cards}
+\newcommand{\buyText}{Buy 1 card from market}
+\newcommand{\tradeText}{May trade primary:secondary resource 1:2}
+
 \noindent
 \begin{tikzpicture}
 	\cardBorder
 	\InternalCardBorder{tan}
-	\costBarFirst{tan}{tan}
-	\costBarSecond{tan}{teal}
-	\costBarThird{tan}{teal}
-	\costBarFourth{teal}{teal}
-	\leftPrimaryAbility{tan}{If you can read me, you can use this ability}
-	\leftSecondaryAbility{teal}{This ability is on the other side}
-	\rightPrimaryAbility{tan}{If you can read me, you can use this ability}
-	\rightSecondaryAbility{teal}{This ability is on the other side}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{tan}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\buyText}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{\discardText}
 \end{tikzpicture}%
 \begin{tikzpicture}
 	\cardBorder
 	\InternalCardBorder{teal}
-	\costBarFirst{tan}{tan}
-	\costBarSecond{teal}{tan}
-	\costBarThird{teal}{tan}
-	\costBarFourth{teal}{teal}
-	\leftPrimaryAbility{teal}{If you can read me, you can use this ability}
-	\leftSecondaryAbility{tan}{This ability is on the other side}
-	\rightPrimaryAbility{teal}{If you can read me, you can use this ability}
-	\rightSecondaryAbility{tan}{This ability is on the other side}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{tan}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\buyText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\discardText}
+	\rightSecondaryAbility{tan}{\swapText}
 \end{tikzpicture}%
 
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{tan}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\buyText}
+	\rightPrimaryAbility{tan}{\tradeText}
+	\rightSecondaryAbility{teal}{\discardText}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{tan}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\buyText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\discardText}
+	\rightSecondaryAbility{tan}{\tradeText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{tan}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\buyText}
+	\rightPrimaryAbility{tan}{\discardText}
+	\rightSecondaryAbility{teal}{\swapText}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{tan}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\buyText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\swapText}
+	\rightSecondaryAbility{tan}{\discardText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{tan}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\tradeText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\discardText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{tan}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\tradeText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\discardText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{tan}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\tradeText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{tan}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\tradeText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\swapText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{tan}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\discardText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{tan}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\discardText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\swapText}
+\end{tikzpicture}%
+
+
+
+
+
+
+
+\noindent
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\buyText}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{\tradeText}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\buyText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\tradeText}
+	\rightSecondaryAbility{tan}{\swapText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarFourth{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\buyText}
+	\rightPrimaryAbility{tan}{\tradeText}
+	\rightSecondaryAbility{teal}{\swapText}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\buyText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\swapText}
+	\rightSecondaryAbility{tan}{\tradeText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\buyText}
+	\rightPrimaryAbility{tan}{\discardText}
+	\rightSecondaryAbility{teal}{\tradeText}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\buyText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\tradeText}
+	\rightSecondaryAbility{tan}{\discardText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\tradeText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\discardText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\tradeText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\discardText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\tradeText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\tradeText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\swapText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{tan}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\discardText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{tan}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\discardText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\swapText}
+\end{tikzpicture}%
+
+
+
+
+
+\noindent
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{teal}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\tradeText}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{\discardText}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{teal}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\tradeText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\discardText}
+	\rightSecondaryAbility{tan}{\swapText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{teal}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\swapText}
+	\rightPrimaryAbility{tan}{\tradeText}
+	\rightSecondaryAbility{teal}{\discardText}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{teal}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\swapText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\discardText}
+	\rightSecondaryAbility{tan}{\tradeText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{teal}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\activateText}
+	\leftSecondaryAbility{teal}{\tradeText}
+	\rightPrimaryAbility{tan}{\discardText}
+	\rightSecondaryAbility{teal}{\swapText}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{teal}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{\tradeText}
+	\leftSecondaryAbility{tan}{\activateText}
+	\rightPrimaryAbility{teal}{\swapText}
+	\rightSecondaryAbility{tan}{\discardText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{teal}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\tradeText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\discardText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{teal}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\tradeText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\discardText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{teal}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\tradeText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{teal}
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\tradeText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\swapText}
+\end{tikzpicture}%
+
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBarFirst{tan}{}
+	\costBarSecond{teal}{}
+	\costBarThird{teal}{}
+	\costBarFourth{teal}{}
+	\leftPrimaryAbility{tan}{\discardText}
+	\leftSecondaryAbility{teal}{}
+	\rightPrimaryAbility{tan}{\swapText}
+	\rightSecondaryAbility{teal}{}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBarFirst{}{tan}
+	\costBarSecond{}{teal }
+	\costBarThird{}{teal}
+	\costBarFourth{}{teal}
+	\leftPrimaryAbility{teal}{}
+	\leftSecondaryAbility{tan}{\discardText}
+	\rightPrimaryAbility{teal}{}
+	\rightSecondaryAbility{tan}{\swapText}
+\end{tikzpicture}%
 
 \end{center}
 \end{document}

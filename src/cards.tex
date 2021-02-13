@@ -2,6 +2,7 @@
 \input{include/libs.tex}
 \input{include/colors.tex}
 \input{include/card_definitions.tex}
+\input{include/ability_definitions.tex}
 
 \begin{document}
 \begin{center}
@@ -16,10 +17,10 @@
 	\costBarSecond{tan}{teal}
 	\costBarThird{tan}{teal}
 	\costBarFourth{teal}{teal}
-	\leftPrimaryAbility{tan}{If you can read me, you can use this ability}
-	\leftSecondaryAbility{teal}{This ability is on the other side}
-	\rightPrimaryAbility{tan}{If you can read me, you can use this ability}
-	\rightSecondaryAbility{teal}{This ability is on the other side}
+	\leftPrimaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+	\leftSecondaryAbility{teal}{\abilityDiscard{2}{white}}
+	\rightPrimaryAbility{tan}{\abilityActivate{tan}}
+	\rightSecondaryAbility{teal}{\abilitySwap}
 \end{tikzpicture}%
 \begin{tikzpicture}
 	\cardBorder
@@ -28,10 +29,10 @@
 	\costBarSecond{teal}{tan}
 	\costBarThird{teal}{tan}
 	\costBarFourth{teal}{teal}
-	\leftPrimaryAbility{teal}{If you can read me, you can use this ability}
-	\leftSecondaryAbility{tan}{This ability is on the other side}
-	\rightPrimaryAbility{teal}{If you can read me, you can use this ability}
-	\rightSecondaryAbility{tan}{This ability is on the other side}
+	\leftPrimaryAbility{teal}{\abilityDiscard{2}{teal}}
+	\leftSecondaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+	\rightPrimaryAbility{teal}{\abilitySwap}
+	\rightSecondaryAbility{tan}{\abilityActivate{black}}
 \end{tikzpicture}%
 
 

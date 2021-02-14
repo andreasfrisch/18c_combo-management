@@ -67,15 +67,17 @@ Then the player follows the effect of the card, and lastly the player will recei
 
 When a player moves a card from in front of them to the discard pile, this card is immediately replaced with the top card of the draw deck.
 
-Note: Some effects will ask the player to take their energy from the discarded card immediately instead of after the resulting action.
-This is the mostly the case when waiting to claim that energy would cause a lot of book keeping -- e.g. several chained activations.
+If an activation causes another activtion, collect energy from the discard pile before initiating the second activtion.
 
 ##### Buy a card
 A player may buy a single card should they have the resources for it.
 When buying a card, the player declares their intention to buy it and pay the required resources from the cards in front of them.
 Resources are indicated by the dots on the cards in the player's zone closest to the player.
 A player pays resources by rotating the cards in their zone so the dots closest to them are indicating their new resource balance.
+
 In order to buy a card, a player must pay the amount and types of resources indicated by the large central bars on the card.
+
+Bought cards are added to the player's zone, allowing that player to collect more of that given resource.
 
 ##### Flip a card
 A player may flip a single card from the market by flipping it to its reverse side, maintaining its respective orientation.
@@ -88,6 +90,7 @@ Players may not rotate cards in front of them.
 
 
 ### Game end
-The game will end the moment a single player has bought enough cards from the market.
-For 3 players, the first player to 3 bought cards wins.
-For 2 players, the first player to 4 bought cards wins.
+The game will end when there are no more cards left in the deck and discard pile.
+The market need not be empty.
+
+The player with the most pairs of cards (teal+tan) in their zone is the winner.

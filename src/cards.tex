@@ -9,32 +9,405 @@
 \pagestyle{empty}
 \hyphenpenalty=10000
 
+%
+% Empty Card
+%
+%\begin{tikzpicture}
+%	\cardBorder
+%	\InternalCardBorder{tan}
+%	\costBars{\costBar{}{} \costBar{}{} \costBar{}{}}
+%	\leftPrimaryAbility{tan}{}
+%	\leftSecondaryAbility{teal}{}
+%	\rightPrimaryAbility{tan}{}
+%	\rightSecondaryAbility{teal}{}
+%\end{tikzpicture}%
+%\begin{tikzpicture}
+%	\cardBorder
+%	\InternalCardBorder{teal}
+%	\costBars{\costBar{}{} \costBar{}{} \costBar{}{}}
+%	\leftPrimaryAbility{teal}{}
+%	\leftSecondaryAbility{tan}{}
+%	\rightPrimaryAbility{teal}{}
+%	\rightSecondaryAbility{tan}{}
+%\end{tikzpicture}%
+
 \noindent
+%('Activate', 'Buy', 'Gain 1', 'Trade')
 \begin{tikzpicture}
 	\cardBorder
 	\InternalCardBorder{tan}
-	\costBarFirst{tan}{tan}
-	\costBarSecond{tan}{teal}
-	\costBarThird{tan}{teal}
-	\costBarFourth{teal}{teal}
-	\leftPrimaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
-	\leftSecondaryAbility{teal}{\abilityDiscard{2}{white}}
-	\rightPrimaryAbility{tan}{\abilityActivate{tan}}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{tan} \costBar{tan}{teal}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilityGainResources{tan}{1}}
+	\rightSecondaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{tan} \costBar{teal}{tan}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+	\rightSecondaryAbility{tan}{\abilityGainResources{tan}{1}}
+\end{tikzpicture}%
+
+\noindent
+%('Activate', 'Buy', 'Gain 1', 'Swap')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{teal} \costBar{tan}{teal}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilitySwap}
+	\rightSecondaryAbility{teal}{\abilityGainResources{teal}{1}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{tan} \costBar{teal}{tan}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilityGainResources{teal}{1}}
+	\rightSecondaryAbility{tan}{\abilitySwap}
+\end{tikzpicture}%
+
+\noindent
+%('Activate', 'Buy', 'Trade', 'Swap')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{teal}, \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
 	\rightSecondaryAbility{teal}{\abilitySwap}
 \end{tikzpicture}%
 \begin{tikzpicture}
 	\cardBorder
 	\InternalCardBorder{teal}
-	\costBarFirst{tan}{tan}
-	\costBarSecond{teal}{tan}
-	\costBarThird{teal}{tan}
-	\costBarFourth{teal}{teal}
-	\leftPrimaryAbility{teal}{\abilityDiscard{2}{teal}}
-	\leftSecondaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{tan} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
 	\rightPrimaryAbility{teal}{\abilitySwap}
-	\rightSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightSecondaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
 \end{tikzpicture}%
 
+\noindent
+%('Activate', 'Buy', 'Trade', 'Discard 2')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{teal}{teal} \costBar{teal}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilityDiscard{tan}{2}}
+	\rightSecondaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{teal}{teal} \costBar{teal}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+	\rightSecondaryAbility{tan}{\abilityDiscard{white}{2}}
+\end{tikzpicture}%
+
+\noindent
+%('Activate', 'Buy', 'Swap', 'Discard 2')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{tan} \costBar{tan}{tan}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilitySwap}
+	\rightSecondaryAbility{teal}{\abilityDiscard{white}{2}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{tan} \costBar{tan}{tan}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilityDiscard{teal}{2}}
+	\rightSecondaryAbility{tan}{\abilitySwap}
+\end{tikzpicture}%
+
+\noindent
+%('Activate', 'Gain 1', 'Trade', 'Swap')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{teal} \costBar{tan}{teal} \costBar{tan}{teal}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityGainResources{teal}{1}}
+	\rightPrimaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+	\rightSecondaryAbility{teal}{\abilitySwap}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{teal}{tan} \costBar{teal}{tan} \costBar{teal}{tan}}
+	\leftPrimaryAbility{teal}{\abilityGainResources{teal}{1}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilitySwap}
+	\rightSecondaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+\end{tikzpicture}%
+
+\noindent
+%('Activate', 'Gain 1', 'Swap', 'Discard 2')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilitySwap}
+	\rightPrimaryAbility{tan}{\abilityGainResources{tan}{1}}
+	\rightSecondaryAbility{teal}{\abilityDiscard{white}{2}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{tan} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilitySwap}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilityDiscard{teal}{2}}
+	\rightSecondaryAbility{tan}{\abilityGainResources{tan}{1}}
+\end{tikzpicture}%
+
+\noindent
+%('Activate', 'Gain 1', 'Swap', 'Destroy 1')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{tan} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityGainResources{teal}{1}}
+	\rightPrimaryAbility{tan}{\abilityDestroyResources{teal}{tan}{1}}
+	\rightSecondaryAbility{teal}{\abilitySwap}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityGainResources{teal}{1}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilitySwap}
+	\rightSecondaryAbility{tan}{\abilityDestroyResources{teal}{white}{1}}
+\end{tikzpicture}%
+
+\noindent
+%('Activate', 'Trade', 'Swap', 'Discard 2')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+	\rightPrimaryAbility{tan}{\abilitySwap}
+	\rightSecondaryAbility{teal}{\abilityDiscard{white}{2}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilityDiscard{teal}{2}}
+	\rightSecondaryAbility{tan}{\abilitySwap}
+\end{tikzpicture}%
+
+\noindent
+%('Activate', 'Trade', 'Swap', 'Destroy 1')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{teal}{tan} \costBar{teal}{tan} \costBar{teal}{tan}}
+	\leftPrimaryAbility{tan}{\abilityActivate{tan}}
+	\leftSecondaryAbility{teal}{\abilityDestroyResources{tan}{white}{1}}
+	\rightPrimaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+	\rightSecondaryAbility{teal}{\abilitySwap}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{teal} \costBar{tan}{teal} \costBar{tan}{teal}}
+	\leftPrimaryAbility{teal}{\abilityDestroyResources{tan}{teal}{1}}
+	\leftSecondaryAbility{tan}{\abilityActivate{black}}
+	\rightPrimaryAbility{teal}{\abilitySwap}
+	\rightSecondaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+\end{tikzpicture}%
+
+\noindent
+%('Buy', 'Gain 1', 'Trade', 'Swap')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{teal} \costBar{tan}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityGainResources{tan}{1}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilitySwap}
+	\rightSecondaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{teal}{tan} \costBar{teal}{tan} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityGainResources{tan}{1}}
+	\rightPrimaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+	\rightSecondaryAbility{tan}{\abilitySwap}
+\end{tikzpicture}%
+
+\noindent
+%('Buy', 'Gain 1', 'Swap', 'Destroy 1')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{teal} \costBar{teal}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityDestroyResources{teal}{tan}{1}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilitySwap}
+	\rightSecondaryAbility{teal}{\abilityGainResources{teal}{1}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{teal}{tan} \costBar{teal}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityDestroyResources{teal}{white}{1}}
+	\rightPrimaryAbility{teal}{\abilityGainResources{teal}{1}}
+	\rightSecondaryAbility{tan}{\abilitySwap}
+\end{tikzpicture}%
+
+\noindent
+%('Buy', 'Trade', 'Swap', 'Destroy 1')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{teal}{tan} \costBar{teal}{tan} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityDestroyResources{teal}{tan}{1}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilityTrade{teal}{tan}{3}}
+	\rightSecondaryAbility{teal}{\abilitySwap}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{teal} \costBar{tan}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityDestroyResources{teal}{white}{1}}
+	\rightPrimaryAbility{teal}{\abilitySwap}
+	\rightSecondaryAbility{tan}{\abilityTrade{teal}{tan}{3}}
+\end{tikzpicture}%
+
+\noindent
+%('Buy', 'Trade', 'Discard 2', 'Destroy 1')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{teal}{tan} \costBar{teal}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityDiscard{tan}{2}}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+	\rightSecondaryAbility{teal}{\abilityDestroyResources{tan}{white}{1}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{teal} \costBar{teal}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilityDiscard{white}{2}}
+	\rightPrimaryAbility{teal}{\abilityDestroyResources{tan}{teal}{1}}
+	\rightSecondaryAbility{tan}{\abilityTrade{tan}{teal}{2}}
+\end{tikzpicture}%
+
+\noindent
+%('Buy', 'Trade', 'Swap', 'Discard 2')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilitySwap}
+	\leftSecondaryAbility{teal}{\abilityBuy{black}}
+	\rightPrimaryAbility{tan}{\abilityDiscard{tan}{2}}
+	\rightSecondaryAbility{teal}{\abilityTrade{tan}{teal}{3}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{tan} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityBuy{teal}}
+	\leftSecondaryAbility{tan}{\abilitySwap}
+	\rightPrimaryAbility{teal}{\abilityTrade{tan}{teal}{3}}
+	\rightSecondaryAbility{tan}{\abilityDiscard{white}{2}}
+\end{tikzpicture}%
+
+\noindent
+%('Gain 1', 'Trade', 'Swap', 'Discard 2')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{tan} \costBar{teal}{tan}}
+	\leftPrimaryAbility{tan}{\abilityGainResources{tan}{2}}
+	\leftSecondaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+	\rightPrimaryAbility{tan}{\abilitySwap}
+	\rightSecondaryAbility{teal}{\abilityDiscard{teal}{2}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{teal} \costBar{tan}{teal}}
+	\leftPrimaryAbility{teal}{\abilityTrade{teal}{tan}{2}}
+	\leftSecondaryAbility{tan}{\abilityGainResources{tan}{2}}
+	\rightPrimaryAbility{teal}{\abilityDiscard{white}{2}}
+	\rightSecondaryAbility{tan}{\abilitySwap}
+\end{tikzpicture}%
+
+\noindent
+%('Gain 1', 'Trade', 'Swap', 'Destroy 1')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{tan} \costBar{teal}{tan}}
+	\leftPrimaryAbility{tan}{\abilityTrade{teal}{tan}{3}}
+	\leftSecondaryAbility{teal}{\abilityGainResources{teal}{2}}
+	\rightPrimaryAbility{tan}{\abilitySwap}
+	\rightSecondaryAbility{teal}{\abilityDestroyResources{tan}{white}{1}}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{tan} \costBar{tan}{teal}}
+	\leftPrimaryAbility{teal}{\abilityGainResources{teal}{2}}
+	\leftSecondaryAbility{tan}{\abilityTrade{teal}{tan}{3}}
+	\rightPrimaryAbility{teal}{\abilityDestroyResources{teal}{teal}{1}}
+	\rightSecondaryAbility{tan}{\abilitySwap}
+\end{tikzpicture}%
+
+\noindent
+%('Trade', 'Swap', 'Discard 2', 'Destroy 1')
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{tan}
+	\costBars{\costBar{tan}{tan} \costBar{tan}{teal} \costBar{teal}{teal}}
+	\leftPrimaryAbility{tan}{\abilityDestroyResources{tan}{tan}{1}}
+	\leftSecondaryAbility{teal}{\abilityTrade{tan}{teal}{3}}
+	\rightPrimaryAbility{tan}{\abilityDiscard{tan}{2}}
+	\rightSecondaryAbility{teal}{\abilitySwap}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\InternalCardBorder{teal}
+	\costBars{\costBar{tan}{tan} \costBar{teal}{tan} \costBar{teal}{teal}}
+	\leftPrimaryAbility{teal}{\abilityTrade{tan}{teal}{3}}
+	\leftSecondaryAbility{tan}{\abilityDestroyResources{tan}{white}{1}}
+	\rightPrimaryAbility{teal}{\abilitySwap}
+	\rightSecondaryAbility{tan}{\abilityDiscard{white}{2}}
+\end{tikzpicture}%
 
 \end{center}
 \end{document}

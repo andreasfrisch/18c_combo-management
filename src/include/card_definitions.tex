@@ -33,25 +33,21 @@
 
 \newcommand{\InternalCardBorder}[1]{
 	\draw[#1,cardcorners] \shapeCardInternal;
-	
 	% top
 	\draw[white, fill=white] (0.5*\cardWidth-2*\valueCircleRadius-0.4*\cardMargin, \cardHeight-0.75*\cardMargin) rectangle (0.5*\cardWidth+2*\valueCircleRadius+0.4*\cardMargin, \cardHeight-1.25*\cardMargin);
 	\draw[#1, thick, fill=#1, fill opacity=\opacity] (0.5*\cardWidth-0.5*\cardMargin, \cardHeight-\cardMargin) circle (\valueCircleRadius);
 	\draw[#1, thick, fill=#1, fill opacity=\opacity] (0.5*\cardWidth+0.5*\cardMargin, \cardHeight-\cardMargin) circle (\valueCircleRadius);
 	\draw[#1] (0.5*\cardWidth-2*\valueCircleRadius-0.4*\cardMargin, \cardHeight-0.75*\cardMargin) -- (0.5*\cardWidth-2*\valueCircleRadius-0.4*\cardMargin, \cardHeight-1.25*\cardMargin);
 	\draw[#1] (0.5*\cardWidth+2*\valueCircleRadius+0.4*\cardMargin, \cardHeight-0.75*\cardMargin) -- (0.5*\cardWidth+2*\valueCircleRadius+0.4*\cardMargin, \cardHeight-1.25*\cardMargin);
-
 	% right
 	\draw[white, fill=white] (\cardWidth-0.8*\cardMargin, 0.5*\cardHeight-0.6*\cardMargin) rectangle (\cardWidth-1.2*\cardMargin, 0.5*\cardHeight+0.6*\cardMargin);
 	\draw[#1, thick, fill=#1, fill opacity=\opacity] (\cardWidth-\cardMargin, 0.5*\cardHeight) circle (\valueCircleRadius);
 	\draw[#1] (\cardWidth-0.8*\cardMargin, 0.5*\cardHeight-0.6*\cardMargin) -- (\cardWidth-1.2*\cardMargin, 0.5*\cardHeight-0.6*\cardMargin);
 	\draw[#1] (\cardWidth-0.8*\cardMargin, 0.5*\cardHeight+0.6*\cardMargin) -- (\cardWidth-1.2*\cardMargin, 0.5*\cardHeight+0.6*\cardMargin);
-	
 	% bottom
 	\draw[white, fill=white] (0.5*\cardWidth-0.3*\cardMargin, 0.75*\cardMargin) rectangle (0.5*\cardWidth+0.3*\cardMargin, 1.25*\cardMargin);
 	\draw[#1] (0.5*\cardWidth-0.3*\cardMargin, 0.75*\cardMargin) -- (0.5*\cardWidth-0.3*\cardMargin, 1.25*\cardMargin);
 	\draw[#1] (0.5*\cardWidth+0.3*\cardMargin, 0.75*\cardMargin) -- (0.5*\cardWidth+0.3*\cardMargin, 1.25*\cardMargin);
-	
 	% left
 	\draw[white, fill=white] (0.8*\cardMargin, 0.5*\cardHeight-3*\valueCircleRadius-0.6*\cardMargin) rectangle (1.2*\cardMargin, 0.5*\cardHeight+3*\valueCircleRadius+0.6*\cardMargin);
 	\draw[#1, thick, fill=#1, fill opacity=\opacity] (\cardMargin, 0.5*\cardHeight) circle (\valueCircleRadius);
@@ -61,52 +57,22 @@
 	\draw[#1] (0.8*\cardMargin, 0.5*\cardHeight+3*\valueCircleRadius+0.6*\cardMargin) -- (1.2*\cardMargin, 0.5*\cardHeight+3*\valueCircleRadius+0.6*\cardMargin);
 }
 
-\newcommand{\costBarFirst}[2]{
-	\draw[#1, thick, fill=#1, fill opacity=\opacity]
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight, 0.5*\cardHeight+2*\costPrimaryBarLength+1.5*\costBarDistances) rectangle
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight, 0.5*\cardHeight+\costPrimaryBarLength+1.5*\costBarDistances);
-	\draw[#2, fill=#2, fill opacity=\opacity]
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight-\costBarDifferenceDistance-\costSecondaryBarHeight, 0.5*\cardHeight+1.5*\costPrimaryBarLength+0.5*\costSecondaryBarLength+1.5*\costBarDistances) rectangle
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight-\costBarDifferenceDistance, 0.5*\cardHeight+1.5*\costPrimaryBarLength-0.5*\costSecondaryBarLength+1.5*\costBarDistances);
-	\draw[#2, fill=#2, fill opacity=\opacity]
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight+\costBarDifferenceDistance+\costSecondaryBarHeight, 0.5*\cardHeight+1.5*\costPrimaryBarLength+0.5*\costSecondaryBarLength+1.5*\costBarDistances) rectangle
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight+\costBarDifferenceDistance, 0.5*\cardHeight+1.5*\costPrimaryBarLength-0.5*\costSecondaryBarLength+1.5*\costBarDistances);
+\newcommand{\costBar}[2]{
+	\begin{tikzpicture}
+		\draw[#1, thick, fill=#1, fill opacity=\opacity]
+			(-0.5*\costPrimaryBarLength, -0.5*\costPrimaryBarHeight) rectangle
+			(0.5*\costPrimaryBarLength, 0.5*\costPrimaryBarHeight);
+		\draw[#2, fill=#2, fill opacity=\opacity]
+			(-0.5*\costSecondaryBarLength, -0.5*\costPrimaryBarHeight-\costBarDifferenceDistance) rectangle
+			(0.5*\costSecondaryBarLength, -0.5*\costPrimaryBarHeight-\costBarDifferenceDistance-\costSecondaryBarHeight);
+		\draw[#2, fill=#2, fill opacity=\opacity]
+			(-0.5*\costSecondaryBarLength, +0.5*\costPrimaryBarHeight+\costBarDifferenceDistance) rectangle
+			(0.5*\costSecondaryBarLength, +0.5*\costPrimaryBarHeight+\costBarDifferenceDistance+\costSecondaryBarHeight);
+	\end{tikzpicture}
 }
 
-\newcommand{\costBarSecond}[2]{
-	\draw[#1, thick, fill=#1, fill opacity=\opacity]
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight, 0.5*\cardHeight+1*\costPrimaryBarLength+0.5*\costBarDistances) rectangle
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight, 0.5*\cardHeight+0.5*\costBarDistances);
-	\draw[#2, fill=#2, fill opacity=\opacity]
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight-\costBarDifferenceDistance-\costSecondaryBarHeight, 0.5*\cardHeight+0.5*\costPrimaryBarLength+0.5*\costSecondaryBarLength+0.5*\costBarDistances) rectangle
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight-\costBarDifferenceDistance, 0.5*\cardHeight+0.5*\costPrimaryBarLength-0.5*\costSecondaryBarLength+0.5*\costBarDistances);
-	\draw[#2, fill=#2, fill opacity=\opacity]
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight+\costBarDifferenceDistance+\costSecondaryBarHeight, 0.5*\cardHeight+0.5*\costPrimaryBarLength+0.5*\costSecondaryBarLength+0.5*\costBarDistances) rectangle
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight+\costBarDifferenceDistance, 0.5*\cardHeight+0.5*\costPrimaryBarLength-0.5*\costSecondaryBarLength+0.5*\costBarDistances);
-}
-
-\newcommand{\costBarThird}[2]{
-	\draw[#1, thick, fill=#1, fill opacity=\opacity]
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight, 0.5*\cardHeight-\costPrimaryBarLength-0.5*\costBarDistances) rectangle
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight, 0.5*\cardHeight-0.5*\costBarDistances);
-	\draw[#2, fill=#2, fill opacity=\opacity]
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight-\costBarDifferenceDistance-\costSecondaryBarHeight, 0.5*\cardHeight-0.5*\costPrimaryBarLength+0.5*\costSecondaryBarLength-0.5*\costBarDistances) rectangle
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight-\costBarDifferenceDistance, 0.5*\cardHeight-0.5*\costPrimaryBarLength-0.5*\costSecondaryBarLength-0.5*\costBarDistances);
-	\draw[#2, fill=#2, fill opacity=\opacity]
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight+\costBarDifferenceDistance+\costSecondaryBarHeight, 0.5*\cardHeight-0.5*\costPrimaryBarLength+0.5*\costSecondaryBarLength-0.5*\costBarDistances) rectangle
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight+\costBarDifferenceDistance, 0.5*\cardHeight-0.5*\costPrimaryBarLength-0.5*\costSecondaryBarLength-0.5*\costBarDistances);
-}
-
-\newcommand{\costBarFourth}[2]{
-	\draw[#1, thick, fill=#1, fill opacity=\opacity]
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight, 0.5*\cardHeight-2*\costPrimaryBarLength-1.5*\costBarDistances) rectangle
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight, 0.5*\cardHeight-\costPrimaryBarLength-1.5*\costBarDistances);
-	\draw[#2, fill=#2, fill opacity=\opacity]
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight-\costBarDifferenceDistance-\costSecondaryBarHeight, 0.5*\cardHeight-1.5*\costPrimaryBarLength+0.5*\costSecondaryBarLength-1.5*\costBarDistances) rectangle
-		(0.5*\cardWidth-0.5*\costPrimaryBarHeight-\costBarDifferenceDistance, 0.5*\cardHeight-1.5*\costPrimaryBarLength-0.5*\costSecondaryBarLength-1.5*\costBarDistances);
-	\draw[#2, fill=#2, fill opacity=\opacity]
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight+\costBarDifferenceDistance+\costSecondaryBarHeight, 0.5*\cardHeight-1.5*\costPrimaryBarLength+0.5*\costSecondaryBarLength-1.5*\costBarDistances) rectangle
-		(0.5*\cardWidth+0.5*\costPrimaryBarHeight+\costBarDifferenceDistance, 0.5*\cardHeight-1.5*\costPrimaryBarLength-0.5*\costSecondaryBarLength-1.5*\costBarDistances);
+\newcommand{\costBars}[1]{
+	\node [rotate=90] at (0.5*\cardWidth, 0.5*\cardHeight) {#1};
 }
 
 \newcommand{\leftPrimaryAbility}[2]{
@@ -124,7 +90,7 @@
 		(1.5*\cardMargin+2*\primaryAbilityBoxHeight, 4*\cardMargin+\primaryAbilityBoxHeight) --
 		(1.5*\cardMargin+2*\primaryAbilityBoxHeight, \cardHeight-4*\cardMargin-\primaryAbilityBoxHeight) --
 		(1.5*\cardMargin+1.5*\primaryAbilityBoxHeight, \cardHeight-2*\cardMargin-\primaryAbilityBoxHeight);
-		\node [rotate=-90] at (1.5*\cardMargin+1.75*\primaryAbilityBoxHeight, 0.5*\cardHeight) {\scalebox{0.5}{#2}};
+		\node [rotate=-90] at (1.5*\cardMargin+1.75*\primaryAbilityBoxHeight, 0.5*\cardHeight) {\scalebox{0.65}{#2}};
 }
 
 \newcommand{\rightPrimaryAbility}[2]{
@@ -142,5 +108,5 @@
 		(\cardWidth-1.5*\cardMargin-2*\primaryAbilityBoxHeight, 4*\cardMargin+\primaryAbilityBoxHeight) --
 		(\cardWidth-1.5*\cardMargin-2*\primaryAbilityBoxHeight, \cardHeight-4*\cardMargin-\primaryAbilityBoxHeight) --
 		(\cardWidth-1.5*\cardMargin-1.5*\primaryAbilityBoxHeight, \cardHeight-2*\cardMargin-\primaryAbilityBoxHeight);
-		\node [rotate=90] at (\cardWidth-1.5*\cardMargin-1.75*\primaryAbilityBoxHeight, 0.5*\cardHeight) {\scalebox{0.5}{#2}};
+		\node [rotate=90] at (\cardWidth-1.5*\cardMargin-1.75*\primaryAbilityBoxHeight, 0.5*\cardHeight) {\scalebox{0.65}{#2}};
 }
